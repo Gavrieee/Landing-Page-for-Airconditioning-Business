@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/0a927203b7.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./styles.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .scroll-container {
+      scroll-behavior: smooth;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+      /* Hide scrollbar for Firefox */
+      -ms-overflow-style: none;
+      /* Hide scrollbar for IE/Edge */
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar for Chrome/Safari */
+    }
+
+    .scroll-content {
+      display: flex;
+      gap: 2rem;
+      min-width: max-content;
+    }
+  </style>
+
+
+</head>
+
+
+<body>
+  <div class="w-full p-2 px-6 bg-blue-400 text-white fixed top-0 left-0 z-50 shadow-md">
+    <nav class="flex justify-between items-center">
+      <div class="flex justify-between items-center">
+        <a href="#" id="#home" class="font-bold text-center text-white p-4 text-1xl"><img src="pages\img\oket-logo.svg"
+            class="w-32 h-auto" alt="Oket"></a>
+
+        <ul class="hidden md:flex space-x-4 text-1xl">
+          <li><a href="#home" class="hover:text-blue-200 p-4">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-200 p-4">About</a></li>
+
+          <!-- Services with Dropdown -->
+          <li class="relative group">
+            <a href="#services" class="hover:text-blue-200 p-4">Services <i class="fa-solid fa-caret-down pl-1"></i></a>
+            <ul
+              class="absolute left-0 mt-2 w-48 bg-white text-blue-400 rounded shadow-lg hidden group-hover:block transition-all">
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Cleaning & Repair</a></li>
+              <li><a href="#services" class="block px-4 py-2 hover:bg-gray-100">Maintenance Plan</a></li>
+              <li><a href="#installation" class="block px-4 py-2 hover:bg-gray-100">Installation</a></li>
+            </ul>
+          </li>
+          <li><a href="#support" class="hover:text-blue-200 p-4">Support</a></li>
+          <li><a href="#contact" class="hover:text-blue-200 p-4">Contact</a></li>
+        </ul>
+      </div>
+      <div id="scrollDiv"
+        class="bg-white rounded text-blue-400 font-bold hover:bg-gray-100 transition hover:shadow-md text-1xl w-fit hidden ">
+        <a href="service.html" class="p-4 px-12 inline-block w-full h-full text-center">Book a Service</a>
+      </div>
+      <!-- <div class="bg-white rounded text-blue-400 font-bold hover:bg-gray-100 transition hover:shadow-md w-fit mx-auto">
+        <a href="#" class="p-4 px-12 inline-block text-center">Book a Service</a>
+      </div> -->
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollDiv = document.getElementById("scrollDiv");
+        const targetSection = document.getElementById("about").offsetTop;
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > targetSection) {
+            scrollDiv.classList.remove("hidden");  // Show the div
+          } else {
+            scrollDiv.classList.add("hidden");  // Hide the div
+          }
+        });
+      });
+    </script>
+
+  </div>
+
+  <div class="relative w-full h-screen">
+
+    <!-- Background Image -->
+    <img src="https://www.ac-direct.co.uk/wp-content/uploads/2022/02/air-conditioner-7267527_1920.jpg"
+      class="w-full h-screen object-cover absolute inset-0" id="home">
+
+    <!-- Centered Content -->
+    <div
+      class="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4 bg-black bg-opacity-15">
+      <h1 class="text-white text-4xl font-bold">On-demand Aircon Technicians</h1>
+      <p class="text-white">Affordable & trusted technician at your door.</p>
+      <div class="bg-white rounded text-blue-400 font-bold hover:bg-gray-100 transition hover:shadow-md w-fit mx-auto">
+        <a href="service.html" class="p-4 px-12 inline-block text-center">Book a Service</a>
+      </div>
+    </div>
+
+  </div>
+
+  <section id="about" class="scroll-mt-20">
+    <div class="w-full px-6 py-16 bg-white text-blue-400">
+      <!-- Container to keep content from stretching -->
+      <div class="container mx-auto">
+        <h1 class="text-4xl font-semibold text-center">
+          We Stand Behind Our Work
+        </h1>
+
+        <div class="flex flex-col md:flex-row justify-between items-start mt-16 px-8 gap-8">
+          <div class="w-full md:w-1/2">
+            <div class="text-center py-4">
+              <i class="fa-solid fa-circle-check fa-bounce text-6xl"></i>
+            </div>
+            <h2 class="text-center font-semibold">Convenient</h2>
+            <p>Submit your service request from any device. We ask you a few questions and we take care of the rest.</p>
+          </div>
+
+          <div class="w-full md:w-1/2">
+            <div class="text-center py-4">
+              <i class="fa-solid fa-heart fa-bounce text-6xl"></i>
+            </div>
+            <h2 class="text-center font-semibold">Trusted</h2>
+            <p>Get an SMS and an email confirmation. View the photo of our hand-picked and background-checked technician
+              on the way.</p>
+          </div>
+
+          <div class="w-full md:w-1/2">
+            <div class="text-center py-4">
+              <i class="fa-solid fa-medal fa-bounce text-6xl"></i>
+            </div>
+            <h2 class="text-center font-semibold">Guaranteed</h2>
+            <p>Pay directly to the technician after the job is complete and enjoy our hassle-free service. If we can’t
+              help, you pay nothing!</p>
+          </div>
+        </div>
+        <div class="bg-white rounded text-blue-400 font-semibold mx-auto">
+          <a href="about.html" class="block px-6 py-6 mt-12 text-center">
+            See more <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section id="services" class="scroll-mt-20">
+    <div class="w-full px-6 py-16 text-blue-400 bg-gray-100">
+      <div class="container mx-auto">
+        <h1 class="text-4xl font-semibold text-center">
+          Annual Aircon Maintenance Plan
+        </h1>
+
+        <div class="container mx-auto flex flex-col md:flex-row justify-evenly items-start mt-16 px-8 gap-4">
+          <div class="bg-whie p-8 rounded-lg shaow-md">
+            <h2 class="font-semibold text-lg pb-2">Ideal for homes and businesses</h2>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check mt-1.5"></i>
+                <span>Up to 4 cleaning services per year</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check mt-1.5"></i>
+                <span>10% savings on first cleaning service & all repairs</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check mt-1.5"></i>
+                <span>Easy online sign-up with paperless tracking</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check mt-1.5"></i>
+                <span>Annual plan customized to your aircon daily usage</span>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="bg-white px-18 py-16 p-5 rounded-lg shadow-md flex flex-col items-center gap-6">
+            <i class="fa-solid fa-leaf fa-bounce text-6xl" style="color: #00bd2f;"></i>
+            <p class="text-center px-10">Extend the life span of your aircon & save on your electric bill.</p>
+            <div
+              class="bg-blue-50 rounded text-blue-400 font-bold hover:bg-blue-100 transition hover:shadow-md hover:text-blue-500 w-fit mx-auto">
+              <a href="#" class="p-3 px-12 inline-block text-center">GET AN INSTANT QUOTE</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section>
+    <div class="w-full px-6 py-16 bg-white text-blue-400 scroll-mt-20" id="installation">
+      <div class="container mx-auto">
+        <h1 class="text-4xl font-semibold text-center">All Brands Serviced</h1>
+        <p class="text-center p-2">We offer all essential services for every brand and unit type.</p>
+
+        <!-- Scrolling Container -->
+        <div
+          class="relative w-full overflow-x-auto whitespace-nowrap scroll-container mt-8 p-4 border-l-4 border-r-4 border-blue-400">
+          <div class="inline-flex gap-12 scroll-content bg-white justify-evenly">
+            <!-- Logos (Duplicated for seamless scrolling) -->
+            <img
+              src="https://images.seeklogo.com/logo-png/28/1/carrier-logo-png_seeklogo-288200.png?v=1956426059842440600"
+              alt="Carrier" class="h-36">
+            <img src="https://images.seeklogo.com/logo-png/32/1/novo-lg-logo-png_seeklogo-320154.png" alt="LG"
+              class="h-36">
+            <img src="https://images.seeklogo.com/logo-png/10/1/panasonic-logo-png_seeklogo-105708.png" alt="Panasonic"
+              class="h-36">
+            <img src="https://images.seeklogo.com/logo-png/21/1/condura-logo-png_seeklogo-215581.png" alt="Condura"
+              class="h-36">
+            <img src="https://images.seeklogo.com/logo-png/12/1/samsung-logo-png_seeklogo-122017.png" alt="Samsung"
+              class="h-36">
+            <img src="https://images.seeklogo.com/logo-png/12/1/sharp-logo-png_seeklogo-125639.png" alt="Sharp"
+              class="h-36">
+            <img src="https://images.seeklogo.com/logo-png/23/1/daikin-colour-logo-png_seeklogo-230450.png" alt="Daikin"
+              class="h-36">
+          </div>
+        </div>
+        <div
+          class="bg-blue-400 rounded text-white font-bold hover:bg-blue-500 transition hover:shadow-md hover:text-white w-fit mx-auto">
+          <a href="installation.html" class="p-3 px-12 inline-block text-center">Book an Installation!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="py-16 bg-gray-100 flex justify-center scroll-mt-16" id="support">
+
+    <div
+      class="bg-blue-400 text-white rounded-2xl shadow-lg px-10 pt-5 flex items-center max-w-5xl relative flex-wrap gap-0.4">
+
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 order-2 md:order-1 flex justify-center self-end">
+        <img src="pages\img\technician.svg" alt="Technician"
+          class="w-[95%] object-cover drop-shadow-[0px_0px_25px_rgba(255,255,255,10)]">
+      </div>
+
+      <!-- Text Section -->
+      <div class="w-full md:w-1/2 order-1 md:order-2 p-4 mb-6">
+        <h2 class="font-bold mb-4 text-2xl">Our Guarantee</h2>
+        <ul class="space-y-2">
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check mt-1.5"></i>
+            <span>Affordable, background-checked, and certified technicians</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check mt-1.5"></i>
+            <span>Professional solution, genuine parts, and no mess left behind</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check mt-1.5"></i>
+            <span>Upfront pricing prior to approval and no hidden fees</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check mt-1.5"></i>
+            <span>₱2 Million Protection Guarantee</span>
+          </li>
+        </ul>
+        <div
+          class=" bg-white rounded text-blue-400 font-semibold hover:bg-gray-100 transition hover:shadow-md hover:text-blue-400 ">
+          <a href="support.html" class="w-full p-3 m-6 mx-auto block text-center">Ask Tech Xela <i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+  <section>
+    <div class="w-full px-6 py-16 bg-white text-blue-400 " id="services">
+      <div class="container mx-auto">
+
+      </div>
+    </div>
+  </section> -->
+
+  <section id="contact" class="w-full px-6 py-16 bg-white text-blue-400 scroll-mt-16">
+    <h1 class="text-4xl font-semibold text-center">Contact us!</h1>
+    <div class="container mx-auto max-w-4xl p-8 rounded-lg mt-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Contact Form -->
+        <form class="space-y-4">
+          <div>
+            <label for="name" class="block text-blue-400 font-medium">Full Name</label>
+            <input type="text" id="name" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
+          </div>
+          <div>
+            <label for="email" class="block text-blue-400 font-medium">Email</label>
+            <input type="email" id="email" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
+          </div>
+          <div>
+            <label for="message" class="block text-blue-400 font-medium">Message</label>
+            <textarea id="message" rows="4"
+              class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-400 text-white py-3 rounded-lg hover:bg-blue-500 transition">Send
+            Message</button>
+        </form>
+
+        <!-- Contact Details -->
+        <div class="flex flex-col space-y-4 text-blue-400">
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-phone text-blue-400 text-2xl"></i>
+            <span>+63 912 345 6789</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-envelope text-blue-400 text-2xl"></i>
+            <span>oket@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-location-dot text-blue-400 text-2xl"></i>
+            <span>123 Cool St., Manila, Philippines</span>
+          </div>
+
+          <!-- Google Maps Embed -->
+          <iframe class="w-full h-48 rounded-lg shadow-md"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.95373531531573!3d-37.81627927975127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ4JzU4LjYiUyAxNDTCsDU3JzE0LjYiRQ!5e0!3m2!1sen!2sph!4v1617932062956!5m2!1sen!2sph"
+            allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="w-full px-6 py-16 bg-blue-400 text-white" id="services">
+      <div class="container mx-auto">
+
+        <div class="flex flex-col gap-4 md:flex-row px-4">
+          <!-- Item 1 (40% width on desktop) -->
+          <div class="p-4 md:w-[30%]">
+            <a href="#" id="#home" class="font-bold text-center text-white text-1xl"><img src="pages\img\oket-logo.svg"
+                class="w-32 h-auto mb-2" alt="Oket"></a>
+
+            <p>Oket is a technology firm innovating the after-sales services of the appliance and
+              electronics
+              industry.
+              We provide sophisticated web and mobile-based solutions to seamlessly manage the services of devices and
+              enhance the customer experience.</p>
+          </div>
+
+          <!-- Items 2-5 (15% each to total 60%) -->
+          <div class="grid grid-cols-2 gap-4 md:flex md:w-[70%]">
+            <div class="p-4 md:w-1/4 space-y-2">
+              <h3 class="font-semibold">Company</h3>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Join as a tech</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="p-4 md:w-1/4 space-y-2">
+              <h3 class="font-semibold">For Business</h3>
+              <ul>
+                <li><a href="#">Dealer & Insurer</a></li>
+                <li><a href="#">After-sales Management</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Partnership</a></li>
+              </ul>
+            </div>
+            <div class="p-4 md:w-1/4 space-y-2">
+              <h3 class="font-semibold">Get Help</h3>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </div>
+            <div class="p-4 md:w-1/4 w-32 h-auto flex items-center justify-end">
+              <img src="https://cdn.teko.ph/public/site/CORSeal_Teko.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row px-4 gap-2 mt-4">
+
+          <div class="px-4">
+            <p>© 2025 Oket - All Rights Reserved <a href="#">Privacy | Terms</a></p>
+
+          </div>
+
+          <div class="px-4 flex gap-4 md:ml-auto text-4xl">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+  </footer>
+
+
+
+
+
+
+</body>
+
+</html>
